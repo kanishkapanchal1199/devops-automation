@@ -1,4 +1,6 @@
 FROM openjdk:8
+WORKDIR /opt
+ENV PORT 8001
 EXPOSE 8001
-ADD /target/docker-jenkins-integration-0.0.1-SNAPSHOT.jar docker-jenkins-integration-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","docker-jenkins-integration-0.0.1-SNAPSHOT.jar"]
+COPY target/*.jar /opt/xml-parsing-rest-api.jar
+ENTRYPOINT exec java $JAVA_OPTS -jar xml-parsing-rest-api.jar
