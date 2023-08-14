@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM openjdk:8
 WORKDIR /opt
 ENV PORT 8001
 EXPOSE 8001
